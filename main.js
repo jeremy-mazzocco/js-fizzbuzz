@@ -1,21 +1,39 @@
 
-for (i = 1; i <= 100; i++) {
+for (let i = 1; i <= 100; i++) {
+
+    // variable
+    let result;
+    // crea elemento nel DOM
+    const inThe = document.createElement('div');
+
+    // definisci
     if ((i % 3 === 0) && (i % 5 === 0)) {
-        console.log('FizzBuzz');
+        result = 'FizzBuzz';
+        inThe.style.backgroundColor = "red";
     } else if (i % 5 === 0) {
-        console.log('Buzz');
+        result = 'Buzz';
+        inThe.style.backgroundColor = "yellow";
     } else if (i % 3 === 0) {
-        console.log('Fizz');
+        result = 'Fizz';
+        inThe.style.backgroundColor = "green";
     } else {
-        console.log(i);
+        result = i;
+        inThe.style.backgroundColor = "lightblue";
     }
+
+
+
+    // inserisci il valore, la classe all'interno  dell'elemento creato
+    inThe.append(result);
+    inThe.classList.add("box");
+
+    // aggiungi a container l'elemento creato
+    const container = document.getElementById('container');
+    container.append(inThe);
+
+
+
+
 
 }
 
-// for (i = 1; i <= 100; i++) {
-//     if ((i % 3 === 0) && (i % 5 === 0)) {
-//         console.log('FizzBuzz');
-//     } else {
-//         console.log(i);
-//     }
-// }
